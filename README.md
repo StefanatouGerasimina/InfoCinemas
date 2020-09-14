@@ -1,4 +1,4 @@
-# ** InfoCinemas  **
+# **InfoCinemas**
 
 mwivwe 
 ewvewvewgvwevgwe 
