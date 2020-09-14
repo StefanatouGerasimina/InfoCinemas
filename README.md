@@ -42,10 +42,7 @@
 ##Λειτουργία 
 
 Η πλοήγηση κάθε χρήστη βασίζεται στο βασικό του μενού ανάλογα με την κατηγορία στην οποία ανήκει ο χρήστης.
-
-Καλησπερα σας 
-
-![topio](https://github.com/StefanatouGerasimina/InfoCInemas2020_e17142_Stefanatou_Gerasimina/blob/master/pictures/terraced-field-vietnam-ha-giang-landscape-wallpaper.jpg)
+test
 
 
 
