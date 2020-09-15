@@ -117,7 +117,7 @@ Eαν πρόκειται για εισαγωγή μιας ταινίας με μ
 
 Σε επιτυχή ανανέωση της προβολής εμφανίζεται το μήνυμα: 
 
-** **MYour Screening datetime has been succesfully updated.**
+** **Your Screening datetime has been succesfully updated.**
 
 
 #
@@ -130,7 +130,7 @@ Eαν πρόκειται για εισαγωγή μιας ταινίας με μ
  
  Σε επιτυχή ανανέωση του χρήστη εμφανίζεται το μήνυμα:
  
- ** **The user with the e-mail {} has been upgrated as an Administrator!! **
+ ** **The user with the e-mail {} has been upgrated as an Administrator!!**
 
 
 
