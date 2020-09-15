@@ -100,7 +100,9 @@ Eαν πρόκειται για εισαγωγή μιας ταινίας με μ
 ### Add New Screening Datetime
 #
 
-Σε επιτυχή ανανέωση της λίστας με τις ημερομηνίες και τις ώρες προβολής εμφανίζεται το μήνυμα: ** **Your screening datetime has been added.**
+Σε επιτυχή ανανέωση της λίστας με τις ημερομηνίες και τις ώρες προβολής εμφανίζεται το μήνυμα: 
+
+** **Your screening datetime has been added.**
 
 ### Delete a movie screening datetime 
 #
@@ -116,5 +118,8 @@ Eαν πρόκειται για εισαγωγή μιας ταινίας με μ
 ** **MYour Screening datetime has been succesfully updated.**
 
 
+#
+## Log out
+ Πάντα φυσικά υπάρχει και η επιλογή του Log out , το οποίο μας επιστρέφει στην αρχική σελίδα Login-Register
 
 
