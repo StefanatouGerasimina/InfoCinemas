@@ -58,11 +58,11 @@
 
 Eαν πρόκειται για εισαγωγή μιας ταινίας με μοναδικό τίτλο και έτος κυκλοφορίας, εμφανίζεται στην οθόνη του επισκέπτη το μήνυμα:
 
-****This movie has been succesfully inserted!!**
+** **This movie has been succesfully inserted!!**
 
 Εαν εισάγει μια ταινία που υπάρχει με τον ίδιο τίτλο και έτος κυκλοφορίας, εμφανίζεται στην θόνη του επισκέπτη το μήνυμα:
 
-****This movie already exists! Try Again!**
+** **This movie already exists! Try Again!**
 #
 ## Delete a Movie
 
@@ -70,13 +70,13 @@ Eαν πρόκειται για εισαγωγή μιας ταινίας με μ
 
 Σε περίπτωση που η ταινία υπάρχει και γίνεται μοναδική , εμφανίζεται το μήνυμα:
 
-****The Movie has been succesfully deleted!! **
+** **The Movie has been succesfully deleted!! **
 
 (Εαν υπάρχουν πολλαπλές ταινίες με το ίδιο όνομα , διαγράφεται αυτή με το παλαιότερο έτος κυκλοφορίας και εμφανίζεται το ίδιο μήνυμα)
 
 Εαν δεν υπάρχει τέτοια ταινία εμφανίζεται το μήνυμα :
 
-****There is no such movie.Try again!! **
+** **There is no such movie.Try again!! **
 
 
 
