@@ -155,5 +155,42 @@ Eαν πρόκειται για εισαγωγή μιας ταινίας με μ
 ## View History
 Για την προβολή των ταινιών που έχει παρακολουθήσει κάποιος χρήστης 
 
+# Εγκατάσταση και εκτέλεση εργασίας 
+
+1) Κατέβασμα εφαρμογής 
+
+Επιλέγονται το Download zip  στην επιλογή Clone μπορείτε να κατεβάσετε ολόκληρο το Repository, το οποίο περιέχει εναν φάκελο με το όνομα InfoCinemas και αυτό το αρχείο README.
+
+2) Εγκατάσταση Docker 
+
+Για την εγκατάσταση του Docker (εαν δεν το έχετε ήδη εγκατεστημένο)  ακολουθήστε τις παρακάτω εντολές στο Terminal του υπολογιστή σας:
+sudo apt-get update
+
+sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - 
+
+sudo add-apt-repository -y "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+sudo apt-get update6.sudo apt install docker-ce
+
+3) Εγκατάσταση του Docker Compose 
+
+sudo apt install -y docker-compose
+
+Αφού έχετε εγκαταστήσει επιτυχώς τα παραπάνω, συνεχίζεται με την εκτέλεσή του:
+
+1) Κάνετε extract το zip φάκελο που κατεβάσατε 
+2) Στο terminal γράφουμε : 
+
+sudo docker-compose up -d 
+
+Όταν ολοκληρωθεί επιτυχώς η διαδικασία, άνοιγεται ΑΥΣΤΗΡΑ τον browser  Chrome και πληκτρολογώντας localhost:9000 μπορείτε πλέον να χρησιμοποιήσετε την εφαρμογή . 
+
+
+
+
+
+
 
 
