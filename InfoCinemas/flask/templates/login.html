@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form class="testing" action="/login" name='login_user' id="forma" method="POST">
+        <h2>Login</h2>
+        <input type="text" placeholder="Email" name="login_email" required>
+        <input type="password" placeholder="Password" name="login_password" required>
+        <button class="buttont" type="submit">Log-in</button>
+       {% if x==0 %}
+    <p>** Your mail or your password is wrong .Try again! </p>
+    {% endif %} 
+    </form>
+
+    
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+            <title>Document</title>
+            <script
+                src="https://code.jquery.com/jquery-1.12.4.min.js"
+                integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+                crossorigin="anonymous">
+            </script>
+    </head>
+    <body>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid" id="insert_moviediv">
+                <div class="navbar-header">
+                    <a class="navbar-brand">InfoCinemas</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="http://localhost:9000/adprofile?name={{name}}">Profile</a></li>
+                    <li class="active"><a href="">Insert New Movie</a></li>
+                    <li><a href="http://localhost:9000/deletemovie?name={{name}}">Delete a Movie</a></li>
+                    <li><a href="http://localhost:9000/updatemovie?name={{name}}">Update a Movie</a></li>
+                    <li><a href="http://localhost:9000/addadmin?name={{name}}">Add an Admin</a></li>
+                    <li><a href="http://localhost:9000">Log out</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div >
+    
+        
+        
+        <form class="testing" action="/insertmovie" name='insert_data' id="forma" method="POST">
+            <h3>Please fill in the fillowing fields to insert a NEW movie into the system</h3>
+            <input type="text" class="inputstyle" placeholder="Title" name="title" required>
+            <input type="text" class="inputstyle" placeholder="Release Year" name="year" required>
+            <input type="text" class="inputstyle" placeholder="Description" name="description" required>
+            <input type="text" name="name" value="{{name}}" style="display: none;">
+            <input type="datetime-local" placeholder="Number of screening hours forthat day" name ="date">
+            <button class="buttont" id="add_item" type="button" >Add extra hours/days</button>
+            <br>
+            <div id="extra">
+            </div>
+            <script>
+                $(document).ready(function(){
+                    var count_item = 0;
+                    $("#add_item").on("click", function(){
+                        count_item += 1;
+                        $("<input/>").attr({ type: "datetime-local", placeholder: "Add more hours / days",
+                            name: "date"+count_item}).appendTo("#extra").wrap($("<div/>"));
+                    });
+                })
+            </script>
+            <button class="buttont" id="insert_movie" type="submit">Submit</button>
+            
+            
+        </form>
+
+        {% if x==0 %}
+            <br>
+            <h10>**  This movie already exists! Try Again!!</h10>
+        {% elif x==1 %}
+            <br>
+            <h12>** Your movie has been succesfully inserted !!</h12>
+        {% endif %}
+
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <title>Document</title>
+  </head>
+
+  <body>
+      <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand">InfoCinemas</a>
+            </div>
+            <ul class="nav navbar-nav">
+              <li><a href="http://localhost:9000/adprofile?name={{name}}">Profile</a></li>
+              <li><a href="http://localhost:9000/insertmovie?name={{name}}">Insert New Movie</a></li>
+              <li><a href="http://localhost:9000/deletemovie?name={{name}}">Delete a Movie</a></li>
+              <li class="active"><a href="http://localhost:9000/updatemovie?name={{name}}">Update a Movie</a></li>
+              <li><a href="http://localhost:9000/addadmin?name={{name}}">Add an Admin</a></li>
+              <li><a href="http://localhost:9000">Log out</a></li>
+            </ul>
+          </div>
+        </nav>
+
+      
+      <form class="testing" action="/upyear" name='update_year' id="forma" method="POST">
+          <h3>Insert here the New Release Year </h3>
+          <input type="text" class="inputstyle" placeholder="Movie Year..." name="nyear" required>
+          <input type="text" name="ot" value="{{ot}}" style="display: none;">
+          <input type="text" name="oy" value="{{oy}}" style="display: none;">
+          <input type="text" name="name" value="{{name}}" style="display: none;">
+          <button class="buttont" id="up_year" type="submit">Update</button>
+      </form>
+
+      {% if k==1 %}
+        <br>
+        <h5>**  Movie Year has been succesfully updated.</h5>
+      {% endif %}
+      
+  </body>
+</html>

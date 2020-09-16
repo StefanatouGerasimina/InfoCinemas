@@ -1,0 +1,21 @@
+version: '2'
+services:
+  mongodb:
+    image: mongo
+    restart: always
+    container_name: InfoCinema
+    ports: 
+    - 27017:27027
+    volumes: 
+    - ./mongodb/data:/data/db
+  flask-service: 
+    build:
+      context: ./flask
+    restart: always
+    container_name: flask
+    depends_on: 
+      - mongodb
+    ports: 
+      - 9000:9000
+    environment: 
+      - "MONGO_HOSTNAME=mongodb"

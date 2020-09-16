@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+      <title>Document</title>
+  </head>
+  <body>
+    
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand">InfoCinemas</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="http://localhost:9000/profile?mail={{mail}}&name={{name}}">Profile</a></li>
+          <li class="active"><a href="">Search Movie</a></li>
+          <li><a href="http://localhost:9000/view_history?mail={{mail}}&name={{name}}">View History</a></li>
+          <li><a href="http://localhost:9000">Log out</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    
+
+    <form class="testing" action="/searchmovie" name='search_movie' id="forma" method="POST">
+      <h5>Search A Movies</h5>
+        <label for="site-search">Search a movie</label>
+        <input class="inputstyle" type="text" placeholder="Movie Title" name="stitle" required>
+        <button class="buttont" id="s_movie" type="search">Search</button>
+        {% for i in lista%}
+          <li>
+            <a href="http://localhost:9000/moviedetails?title={{i.title}}&year={{i.year}}&mail={{mail}}&name={{name}}">{{i.title}} {{i.year}} </a>
+          </li>
+        {% endfor %}
+        <input type="text" name="mail" value="{{mail}}" style="display: none;">
+        <input type="text" name="name" value="{{name}}" style="display: none;">
+        <br>
+        {% if a== 1 %}
+        <p>** There is no "{{tit}}" Movie in the System</p>
+      {% endif %}
+    </form>
+       
+  </body>
+</html>

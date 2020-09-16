@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand">InfoCinemas</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="http://localhost:9000/profile?mail={{mail}}&name={{name}}">Profile</a></li>
+                    <li class="active"><a href="http://localhost:9000/searchmovie?mail={{mail}}&name={{name}}">Search Movie</a></li>
+                    <li><a href="http://localhost:9000/view_history?mail={{mail}}&name={{name}}">View History</a></li>
+                    <li><a href="http://localhost:9000">Log out</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        
+            <form  class="testing" action="/moviedetails" name='moviedetails' id="forma" method="POST">
+                <h2>
+                    {{tit}}({{ye}})
+                </h2>
+                <p>
+                    Movie Description:
+                    {{d}}
+                </p>
+                <p>
+                    Choose a screening datetime and submit the amount of tickets you want:
+
+                <select name="choice" >
+                    {% for date in a %}
+                        {% for key in date %}
+                            <option value="{{key}}">{{key}}</option>
+                        {% endfor %}
+                    {% endfor %}    
+                </select>
+                <input type="text" placeholder="Number of tickets.." name="nt" required>
+                <input type="text" name="title" value="{{tit}}" style="display: none;">
+                <input type="text" name="year" value="{{ye}}" style="display: none;">
+                <input type="text" name="mail" value="{{mail}}" style="display: none;">
+                <input type="text" name="name" value="{{name}}" style="display: none;">
+                <input type="text" name="d" value="{{d}}" style="display: none;">
+                <button class="buttont" id="book_titckets" type="submit">Book tickets</button>
+                <br>
+                {% if b ==1 %}
+                <h5>**  Your ticker reservation is complete!!</h5>
+                {% endif %}
+
+                {% if k ==1 %}
+                <h5>** There are no available tickets for this screening datetime!!</h5>
+                {% endif %}
+            </form>
+
+            
+        </p>
+        <p> {{mail}}</p>
+    </body>
+</html>

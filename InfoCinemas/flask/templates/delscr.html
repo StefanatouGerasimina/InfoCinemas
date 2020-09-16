@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand">InfoCinemas</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="http://localhost:9000/updatemovie?name={{name}}">Update a Movie</a></li>
+          <li><a href="http://localhost:9000/addscr?ot={{ot}}&oy={{oy}}">Add New Screening Datetime</a></li> 
+          <li class="active"><a href="http://localhost:9000/delscr?ot={{ot}}&oy={{oy}}">Delete a Screening Datetime</a></li>
+          <li><a href="http://localhost:9000/upscr?ot={{ot}}&oy={{oy}}">Update a Screening Datetime</a></li>
+          <li><a href="http://localhost:9000">Log out</a></li>
+        </ul>
+      </div>
+    </nav>
+    
+
+    <form class="testing" action="/delscr" name='delscr' id="forma" method="POST">
+      <h3>Delete a movie screening datetime:</h3>
+      <p>Select the screening date and time you want to delete </p>
+      <select name="choice" >
+        {% for date in a %}
+          {% for key in date %}
+            <option value="{{key}}">{{key}}</option>
+          {% endfor %}
+        {% endfor %}    
+      </select>
+        <input type="text" name="ot" value="{{ot}}" style="display: none;">
+        <input type="text" name="oy" value="{{oy}}" style="display: none;">
+        <button class="buttont" id="del_scr" type="submit">Delete Date</button>
+    </form>
+      
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <title>Document</title>
+        <script
+            src="https://code.jquery.com/jquery-1.12.4.min.js"
+            integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+            crossorigin="anonymous">
+        </script>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand">InfoCinemas</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="http://localhost:9000/updatemovie?name={{name}}">Update a Movie</a></li>
+                <li class="active"><a href="http://localhost:9000/addscr?ot={{ot}}&oy={{oy}}">Add New Screening Datetime</a></li> 
+                <li><a href="http://localhost:9000/delscr?ot={{ot}}&oy={{oy}}">Delete a Screening Datetime</a></li>
+                <li><a href="http://localhost:9000/upscr?ot={{ot}}&oy={{oy}}">Update a Screening Datetime</a></li>
+                <li><a href="http://localhost:9000">Log out</a></li>
+            </ul>
+            </div>
+        </nav>
+
+        
+
+        <form class="testing" action="/addscr" name='addscr' id="forma" method="POST">
+            <h3>Please fill in the fillowing fields to insert a NEW Screening Datetime</h3>
+            <input type="datetime-local" placeholder="Number of screening hours forthat day" name ="date">
+            <button id="add_item" type="button" >Add extra hours/days</button>
+            <input type="text" name="ot" value="{{ot}}" style="display: none;">
+            <input type="text" name="oy" value="{{oy}}" style="display: none;">
+            <br>
+
+            <div id="extra">
+            </div>
+            <script>
+                $(document).ready(function(){
+                    var count_item = 0;
+                    $("#add_item").on("click", function(){
+                        count_item += 1;
+                        $("<input/>").attr({ type: "datetime-local", placeholder: "Add more hours / days",
+                            name: "date"+count_item}).appendTo("#extra").wrap($("<div/>"));
+                    });
+                })
+            </script>
+            <button class="buttont" id="add_scr" type="submit">Submit</button>
+        </form>
+
+        {% if k==1 %}
+            <br>
+            <h5>**  Your screening datetime has been added.</h5>
+        {% endif %}
+        
+    </body>
+</html>

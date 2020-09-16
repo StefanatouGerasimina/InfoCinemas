@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>Document</title>
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand">InfoCinemas</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="http://localhost:9000/adprofile?name={{name}}">Profile</a></li>
+          <li><a href="http://localhost:9000/insertmovie?name={{name}}">Insert New Movie</a></li>
+          <li class="active"><a href="">Delete a Movie</a></li>
+          <li><a href="http://localhost:9000/updatemovie?name={{name}}">Update a Movie</a></li>
+          <li><a href="http://localhost:9000/addadmin?name={{name}}">Add an Admin</a></li>
+          <li><a href="http://localhost:9000">Log out</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    
+
+    <form class="testing" action="/deletemovie" name='delete_movie' id="forma" method="POST">
+      <h5>Select the Movie you want to delete</h5>
+      <label for="site-search">Search a movie</label>
+      <input class="inputstyle" type="text" placeholder="Search.." name="moviesearch">
+      <input type="text" name="name" value="{{name}}" style="display: none;">
+      <button class="buttont" id="delete_movie" type="submit">Delete</button>
+
+      <br>  
+      {%if x ==0 %}
+      <br>
+      <h7>** There is no such movie.Try again!!</h7>
+    {%elif x == 1%}
+      <br>
+      <h7>**  The Movie has been succesfully deleted!!</h7>
+    {%elif x == 2%}
+      <br>
+      <h7>** The Movie "{{n}}" of year {{y}} has been succesfully deleted!!</h7>
+    {% endif %}
+    
+    </form>
+
+    
+  </body>
+</html>

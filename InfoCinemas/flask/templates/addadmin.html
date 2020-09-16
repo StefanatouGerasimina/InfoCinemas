@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <title>Document</title>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand">InfoCinemas</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="http://localhost:9000/adprofile?name={{name}}">Profile</a></li>
+          <li><a href="http://localhost:9000/insertmovie?name={{name}}">Insert New Movie</a></li>
+          <li><a href="http://localhost:9000/deletemovie?name={{name}}">Delete a Movie</a></li>
+          <li><a href="http://localhost:9000/updatemovie?name={{name}}">Update a Movie</a></li>
+          <li class="active"><a href="">Add an Admin</a></li>
+          <li><a href="http://localhost:9000">Log out</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    
+
+    <form class="testing" action="/addadmin" name='addadmin' id="forma" method="POST">
+        <h2>Upgarde a User as an Administrator </h2>
+        <h3>Which User do you want to designate as Administrator?</h3>
+        <label>Search for a User: </label>
+        <input type="text" class="inputstyle" id="addadmin" placeholder="User's email" name="usersname" >
+        <input type="text" name="name" value="{{name}}" style="display: none;">
+        <button class="buttont" id="add_admin" type="submit">Add</button>
+       
+        <br>
+        {%if x ==0 %}
+        <br>
+        <h7>** There is no user with the e-mail {{n}}.Try again!!</h7>
+      {%elif x == 1%}
+        <br>
+        <h7>**  The user with the e-mail {{n}} has been upgrated as an Administrator!!</h7>
+      {% endif %}
+    </form>
+
+    
+    
+  </body>
+</html>

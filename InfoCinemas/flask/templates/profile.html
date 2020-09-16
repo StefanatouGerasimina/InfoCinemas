@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <title>Document</title>
+  </head>
+  <body>
+      <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand">InfoCinemas</a>
+            </div>
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="">Profile</a></li>
+              <li><a href="http://localhost:9000/searchmovie?mail={{mail}}&name={{name}}">Search Movie</a></li>
+              <li><a href="http://localhost:9000/view_history?mail={{mail}}&name={{name}}">View History</a></li>
+              <li><a href="http://localhost:9000">Log out</a></li>
+            </ul>
+          </div>
+        </nav>
+
+      <h4>Welcome {{name}} ( {{mail}} )</h4>
+      <p>You can search for a movie you like or you can view your history of your viewed movies</p>
+  </body>
+</html>
